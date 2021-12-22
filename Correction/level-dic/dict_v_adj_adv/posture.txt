@@ -1,0 +1,2 @@
+verb - display an attitude
+pose masquerade affect 

@@ -1,0 +1,4 @@
+verb - render defenseless
+disband subdue neutralize 
+verb - persuade
+seduce convince urge 

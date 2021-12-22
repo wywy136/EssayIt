@@ -1,0 +1,4 @@
+verb - allow entry or use
+accept concede entertain 
+verb - confess, acknowledge
+confirm accept relate 

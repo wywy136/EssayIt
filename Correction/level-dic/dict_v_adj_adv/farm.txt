@@ -1,0 +1,2 @@
+verb - produce crops, raise animals
+ranch plant crop 

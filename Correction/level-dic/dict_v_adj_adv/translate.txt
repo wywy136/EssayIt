@@ -1,0 +1,4 @@
+verb - interpret, explain
+convert render transcribe 
+verb - change
+convert transform alter 

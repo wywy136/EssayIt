@@ -1,0 +1,4 @@
+verb - name, label
+baptize characterize christen 
+verb - hold right to
+empower enable permit 

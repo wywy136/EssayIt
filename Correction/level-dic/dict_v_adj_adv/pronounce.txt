@@ -1,0 +1,4 @@
+verb - produce words vocally
+speak say accent 
+verb - announce, declare
+say proclaim affirm 

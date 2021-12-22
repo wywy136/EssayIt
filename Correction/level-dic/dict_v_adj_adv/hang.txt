@@ -1,0 +1,6 @@
+verb - suspend or be suspended
+stick float pin 
+verb - kill by suspension from a rope
+swing execute stretch 
+verb - depend on future action
+cling await hinge 

@@ -1,0 +1,4 @@
+verb - build, produce
+tool synthesize mold 
+verb - concoct, invent
+produce create fabricate 

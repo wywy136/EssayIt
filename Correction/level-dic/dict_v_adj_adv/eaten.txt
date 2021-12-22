@@ -1,0 +1,4 @@
+verb - consume food
+graze feed bite 
+verb - erode, wear away; use up
+bite decompose corrode 

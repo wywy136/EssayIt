@@ -1,0 +1,8 @@
+verb - leap, spring
+bounce dive drop 
+verb - recoil
+bounce bolt start 
+verb - omit, avoid
+switch skip cancel 
+verb - increase
+hike advance up 

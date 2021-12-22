@@ -1,0 +1,2 @@
+verb - put on view; present
+feature display reveal 

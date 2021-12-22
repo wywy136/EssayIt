@@ -1,0 +1,2 @@
+verb - convert
+alter apply appropriate 

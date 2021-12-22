@@ -1,0 +1,4 @@
+verb - slay and prepare animal for meat
+liquidate slaughter salt 
+verb - ruin
+wreck spoil destroy 

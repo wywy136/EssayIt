@@ -1,0 +1,8 @@
+verb - broadcast on air waves
+glow emit radiate 
+verb - smile broadly
+glow radiate shine 
+verb - shine, as a light
+glow emit radiate 
+verb - make electronic transfer
+transmit radiate emit 

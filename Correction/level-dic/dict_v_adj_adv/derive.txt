@@ -1,0 +1,2 @@
+verb - deduce a conclusion
+infer extract trace 

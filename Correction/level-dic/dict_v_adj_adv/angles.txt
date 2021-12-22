@@ -1,0 +1,4 @@
+verb - fish
+cast 
+verb - attempt
+hint maneuver scheme 

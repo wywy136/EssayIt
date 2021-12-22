@@ -1,0 +1,6 @@
+verb - transport physical object
+give transmit remove 
+verb - win; accomplish
+touch affect get 
+verb - broadcast electronically
+give convey send 

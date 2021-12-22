@@ -1,0 +1,6 @@
+verb - take to the air, usually employing wings
+pilot fleet zoom 
+verb - run or pass swiftly
+bolt sprint zoom 
+verb - escape, flee
+bolt run withdraw 

@@ -1,0 +1,6 @@
+verb - put on clothing
+attire robe clad 
+verb - physically prepare; groom
+trim comb decorate 
+verb - cover a wound
+bandage cleanse plaster 

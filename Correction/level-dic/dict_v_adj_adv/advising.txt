@@ -1,0 +1,4 @@
+verb - offer recommendation
+instruct urge prescribe 
+verb - offer information
+inform warn notify 

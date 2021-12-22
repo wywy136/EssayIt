@@ -1,0 +1,4 @@
+verb - make pigmented; shade
+pigment dye tint 
+verb - distort, exaggerate
+fudge twist pad 

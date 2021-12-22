@@ -1,0 +1,2 @@
+verb - place vehicle in a position
+station seat deposit 

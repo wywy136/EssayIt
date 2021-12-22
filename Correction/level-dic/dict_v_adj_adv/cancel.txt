@@ -1,0 +1,4 @@
+verb - call off; erase
+break remove kill 
+verb - equal out
+discard ignore neutralize 

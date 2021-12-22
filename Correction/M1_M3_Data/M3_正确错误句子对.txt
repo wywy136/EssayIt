@@ -1,0 +1,21 @@
+S English is a internationaly language which becomes importantly for modern world.
+T English is a international language which becomes importantly for modern world.
+
+S English is a internationaly language which becomes importantly for modern world.
+T English is a internationaly language which becomes important for modern world.
+
+S In China, English is took to be a foreigh language which many student choosed to learn.
+T In China, English is took to be a foreign language which many student choosed to learn.
+
+S In China, English is took to be a foreigh language which many student choosed to learn.
+T In China, English is took to be a foreigh language which many student choose to learn.
+
+S They use at least one hour to learn English knowledges a day.
+T They use at least one hour to learn English knowledge a day.
+
+S it is hard for people to see eye to eye.
+T It is hard for people to see eye to eye.
+
+S Because of we are Chinese, why do we give up our mother tongue and learn our owne culture through a foreign language?
+T Because of we are Chinese, why do we give up our mother tongue and learn our own culture through a foreign language?
+

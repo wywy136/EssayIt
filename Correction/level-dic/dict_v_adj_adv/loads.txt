@@ -1,0 +1,4 @@
+verb - burden, saddle
+weight heap freight 
+verb - overburden, pressure
+weight charge saddle 

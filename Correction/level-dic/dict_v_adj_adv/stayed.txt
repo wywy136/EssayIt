@@ -1,0 +1,6 @@
+verb - wait
+reside sojourn settle 
+verb - visit
+sojourn live dwell 
+verb - hold in abeyance
+arrest hold discontinue 

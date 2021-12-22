@@ -1,0 +1,2 @@
+verb - answer, respond in retaliation
+offset dash respond 

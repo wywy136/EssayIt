@@ -1,0 +1,6 @@
+verb - make room, lodging available
+domicile contain furnish 
+verb - make, become suitable for something
+tailor harmonize adjust 
+verb - perform service
+defer provide convenience 

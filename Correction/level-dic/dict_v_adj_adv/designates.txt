@@ -1,0 +1,4 @@
+verb - name, entitle
+christen nominate baptize 
+verb - specify as selection
+tab stipulate nominate 

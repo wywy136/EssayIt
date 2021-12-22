@@ -1,0 +1,4 @@
+verb - hang from above
+attach append depend 
+verb - delay, hold off
+eliminate halt defer 

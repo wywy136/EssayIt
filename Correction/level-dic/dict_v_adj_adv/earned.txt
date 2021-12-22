@@ -1,0 +1,4 @@
+verb - make money
+gain receive win 
+verb - deserve a reward
+gain win attain 

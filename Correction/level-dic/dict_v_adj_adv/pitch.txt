@@ -1,0 +1,6 @@
+verb - throw, hurl
+peg toss sling 
+verb - put up, erect
+place fix station 
+verb - dive, roll
+drop bend slope 

@@ -1,0 +1,2 @@
+verb - stop, conclude
+halt fail terminate 

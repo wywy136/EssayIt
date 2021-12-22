@@ -1,0 +1,4 @@
+verb - allow
+enable permit give 
+verb - rent out object, property
+hire lease charter 

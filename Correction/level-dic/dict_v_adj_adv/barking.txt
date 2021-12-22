@@ -1,0 +1,4 @@
+verb - yelp
+woof growl howl 
+verb - shout
+growl roar yell 

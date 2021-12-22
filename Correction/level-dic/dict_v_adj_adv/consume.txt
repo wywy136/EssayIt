@@ -1,0 +1,6 @@
+verb - use up
+absorb utilize employ 
+verb - eat, drink
+absorb feed ingest 
+verb - destroy
+waste expend overwhelm 

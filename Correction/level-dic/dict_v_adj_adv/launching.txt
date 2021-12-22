@@ -1,0 +1,4 @@
+verb - send off
+catapult discharge fire 
+verb - begin, initiate
+start jump bow 

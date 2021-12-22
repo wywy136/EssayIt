@@ -1,0 +1,4 @@
+verb - detonate weapon
+torpedo blast attack 
+verb - fail miserably
+flop flummox lose 

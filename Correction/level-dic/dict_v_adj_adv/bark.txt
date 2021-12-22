@@ -1,0 +1,4 @@
+verb - yelp
+growl bay howl 
+verb - shout
+roar growl snap 

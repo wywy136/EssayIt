@@ -1,0 +1,4 @@
+verb - lean, slant
+dip yaw bend 
+verb - attack, fight
+spar thrust break 

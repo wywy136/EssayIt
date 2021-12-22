@@ -1,0 +1,6 @@
+verb - run quickly away
+fly jump sprint 
+verb - fasten securely
+lock latch bar 
+verb - eat very fast
+inhale gorge wolf 

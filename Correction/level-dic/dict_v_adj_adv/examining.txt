@@ -1,0 +1,4 @@
+verb - analyze, test
+study parse audit 
+verb - ask questions pointedly
+query experiment measure 

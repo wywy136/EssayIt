@@ -1,0 +1,6 @@
+verb - hit with foot
+punt boot dropkick 
+verb - complain
+fight combat object 
+verb - quit a habit
+stop abandon desist 

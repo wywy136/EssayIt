@@ -1,0 +1,2 @@
+verb - tune to desired position
+punch twist rotate 

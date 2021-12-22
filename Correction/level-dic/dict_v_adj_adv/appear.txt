@@ -1,0 +1,6 @@
+verb - come into sight
+occur recur arise 
+verb - seem
+occur sound resemble 
+verb - be published; perform
+perform play enter 

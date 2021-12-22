@@ -1,0 +1,4 @@
+verb - purchase
+purchase acquire get 
+verb - bribe
+fix reach redeem 

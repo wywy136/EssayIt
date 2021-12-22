@@ -1,0 +1,4 @@
+verb - form, create
+pattern mold frame 
+verb - devise, plan
+frame form define 

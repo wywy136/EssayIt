@@ -1,0 +1,4 @@
+verb - dig
+excavate unearth mine 
+verb - digging tool
+scoop spade digger 

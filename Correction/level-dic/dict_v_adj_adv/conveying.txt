@@ -1,0 +1,4 @@
+verb - transport
+fetch transmit dispatch 
+verb - express message
+impart transmit communicate 

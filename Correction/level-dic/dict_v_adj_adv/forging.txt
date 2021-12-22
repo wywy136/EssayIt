@@ -1,0 +1,4 @@
+verb - counterfeit
+frame fake design 
+verb - make something from scratch
+mold manufacture frame 

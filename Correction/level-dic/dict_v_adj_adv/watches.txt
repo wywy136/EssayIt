@@ -1,0 +1,4 @@
+verb - look at
+pipe scan stare 
+verb - guard, protect
+keep patrol wait 

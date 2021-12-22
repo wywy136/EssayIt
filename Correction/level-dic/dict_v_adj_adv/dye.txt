@@ -1,0 +1,2 @@
+verb - change color with mixture
+pigment tint stain 

@@ -1,0 +1,4 @@
+verb - fix, restore
+refresh retrieve debug 
+verb - leave; retire
+fare travel remove 

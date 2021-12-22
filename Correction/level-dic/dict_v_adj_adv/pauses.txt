@@ -1,0 +1,2 @@
+verb - wait, delay
+sideline hesitate interrupt 

@@ -1,0 +1,6 @@
+verb - make ready for transport
+load package batch 
+verb - fill, compact
+heap load ram 
+verb - transport, carry
+truck hump freight 

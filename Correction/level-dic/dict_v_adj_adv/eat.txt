@@ -1,0 +1,4 @@
+verb - consume food
+feed bite ingest 
+verb - erode, wear away; use up
+bite decompose disappear 

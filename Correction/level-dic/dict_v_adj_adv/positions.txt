@@ -1,0 +1,2 @@
+verb - place physically in location
+stick set array 

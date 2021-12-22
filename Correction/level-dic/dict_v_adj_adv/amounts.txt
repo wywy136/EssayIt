@@ -1,0 +1,2 @@
+verb - equal, add up to
+sum number aggregate 

@@ -1,0 +1,4 @@
+verb - protect
+fight guard garrison 
+verb - show support for
+champion uphold support 

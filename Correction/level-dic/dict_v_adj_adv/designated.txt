@@ -1,0 +1,4 @@
+verb - name, entitle
+nominate call nickname 
+verb - specify as selection
+nominate delegate elect 

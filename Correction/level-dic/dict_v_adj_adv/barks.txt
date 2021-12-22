@@ -1,0 +1,4 @@
+verb - yelp
+howl woof growl 
+verb - shout
+growl mutter bellow 

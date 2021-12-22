@@ -1,0 +1,4 @@
+verb - label; attach label
+tack append adjoin 
+verb - follow
+track heel tail 

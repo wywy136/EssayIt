@@ -1,0 +1,2 @@
+verb - jump over an obstacle
+scale bounce negotiate 

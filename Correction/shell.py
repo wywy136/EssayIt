@@ -1,0 +1,2 @@
+import os
+os.system('cp ../Correction/M4_M5_Data/test.error.sent /home/wangyu/fairseq-gec-master/test/raw/test.error.sent; cd /home/wangyu/fairseq-gec-master; bash correct.sh -1 _pretrained; cp test/result/corrected.sent /home/wangyu/wy/Correction/M4_M5_Data/corrected.sent')

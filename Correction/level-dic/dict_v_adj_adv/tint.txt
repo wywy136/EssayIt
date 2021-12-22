@@ -1,0 +1,2 @@
+verb - color with a certain shade
+shade tinge dye 

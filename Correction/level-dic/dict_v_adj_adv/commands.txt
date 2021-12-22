@@ -1,0 +1,4 @@
+verb - demand
+check instruct task 
+verb - rule, have power
+check push manage 

@@ -1,0 +1,4 @@
+verb - prepare
+rear ground equip 
+verb - aim at
+beam incline cock 

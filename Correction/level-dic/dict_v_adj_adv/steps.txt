@@ -1,0 +1,2 @@
+verb - move foot to walk
+advance skip pace 

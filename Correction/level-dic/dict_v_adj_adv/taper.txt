@@ -1,0 +1,2 @@
+verb - decrease
+fade thin drain 

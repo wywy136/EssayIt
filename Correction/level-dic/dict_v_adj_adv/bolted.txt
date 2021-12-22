@@ -1,0 +1,6 @@
+verb - run quickly away
+dart startle ditch 
+verb - fasten securely
+latch lock bar 
+verb - eat very fast
+inhale devour cram 

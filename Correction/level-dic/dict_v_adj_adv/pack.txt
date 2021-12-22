@@ -1,0 +1,6 @@
+verb - make ready for transport
+tie load store 
+verb - fill, compact
+pile squeeze heap 
+verb - transport, carry
+truck ride heel 

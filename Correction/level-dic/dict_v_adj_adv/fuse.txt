@@ -1,0 +1,2 @@
+verb - meld, intermix
+bind combine merge 

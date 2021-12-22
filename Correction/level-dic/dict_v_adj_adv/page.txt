@@ -1,0 +1,4 @@
+verb - call for over communications system
+beep call announce 
+verb - mark sheets of document
+check number count 

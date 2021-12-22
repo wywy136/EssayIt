@@ -1,0 +1,2 @@
+verb - connect
+interface associate network 

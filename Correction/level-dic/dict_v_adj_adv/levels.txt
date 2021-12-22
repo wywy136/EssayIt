@@ -1,0 +1,6 @@
+verb - make even
+grade surface equalize 
+verb - destroy, demolish
+waste equalize drop 
+verb - aim, direct
+beam point focus 

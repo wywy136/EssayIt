@@ -1,0 +1,4 @@
+verb - find again
+resume regain restore 
+verb - improve in health
+heal gain restore 

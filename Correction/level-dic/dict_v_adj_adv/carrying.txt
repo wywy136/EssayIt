@@ -1,0 +1,6 @@
+verb - transport physical object
+lift truck freight 
+verb - win; accomplish
+touch drive strike 
+verb - broadcast electronically
+send transport transfer 

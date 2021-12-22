@@ -1,0 +1,4 @@
+verb - kick; oust
+bounce punt eject 
+verb - start operating system
+restart load reset 

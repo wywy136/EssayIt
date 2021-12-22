@@ -1,0 +1,6 @@
+verb - wait
+stand sojourn pause 
+verb - visit
+sojourn live stop 
+verb - hold in abeyance
+arrest stall check 

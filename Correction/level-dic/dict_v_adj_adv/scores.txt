@@ -1,0 +1,8 @@
+verb - keep count
+record tally register 
+verb - achieve, succeed
+notch win gain 
+verb - cut, nick
+notch slit mark 
+verb - write a musical arrangement
+set compose arrange 

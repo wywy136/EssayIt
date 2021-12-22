@@ -1,0 +1,2 @@
+verb - move to new country
+migrate depart remove 

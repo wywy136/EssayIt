@@ -1,0 +1,4 @@
+verb - talk
+tell pronounce whisper 
+verb - address; give a lecture
+recite discourse talk 

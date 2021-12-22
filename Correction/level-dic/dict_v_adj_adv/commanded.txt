@@ -1,0 +1,4 @@
+verb - demand
+proclaim appoint summon 
+verb - rule, have power
+subdue conquer coerce 

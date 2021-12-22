@@ -1,0 +1,2 @@
+verb - count, calculate
+sum amount estimate 

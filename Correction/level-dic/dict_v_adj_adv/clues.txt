@@ -1,0 +1,2 @@
+verb - give information
+notify warn tell 

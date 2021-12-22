@@ -1,0 +1,6 @@
+verb - use up
+waste exhaust absorb 
+verb - eat, drink
+ingest feed absorb 
+verb - destroy
+waste decay exhaust 

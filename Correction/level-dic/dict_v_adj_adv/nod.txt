@@ -1,0 +1,4 @@
+verb - gesture with head
+acquiesce greet duck 
+verb - fall asleep
+nap slump sleep 

@@ -1,0 +1,4 @@
+verb - border, mark
+edge queue rim 
+verb - put covering inside object
+panel face cover 

@@ -1,0 +1,2 @@
+verb - check; stop
+block slow stop 

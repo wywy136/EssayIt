@@ -1,0 +1,4 @@
+verb - look at
+listen wait spy 
+verb - guard, protect
+keep wait attend 

@@ -1,0 +1,6 @@
+verb - perform, function
+transport run serve 
+verb - manage, use
+run handle administer 
+verb - perform surgery
+remove set excise 

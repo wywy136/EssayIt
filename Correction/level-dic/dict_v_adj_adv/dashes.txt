@@ -1,0 +1,6 @@
+verb - run very fast for short distance
+gallop haste sprint 
+verb - break by hitting or throwing violently
+shiver hurl sling 
+verb - discourage, frustrate
+balk blight baffle 

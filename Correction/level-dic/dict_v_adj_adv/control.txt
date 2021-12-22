@@ -1,0 +1,4 @@
+verb - have charge of
+command rule direct 
+verb - curb, hold back
+regulate adjust limit 

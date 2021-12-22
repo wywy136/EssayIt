@@ -1,0 +1,4 @@
+verb - put in the ground for growing
+seed farm grow 
+verb - establish, set
+deposit found root 

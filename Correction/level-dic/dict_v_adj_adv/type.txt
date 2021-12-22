@@ -1,0 +1,4 @@
+verb - classify
+sort class tab 
+verb - hit keys on machine to print document
+copy teletype transcribe 

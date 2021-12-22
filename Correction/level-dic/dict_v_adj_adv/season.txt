@@ -1,0 +1,4 @@
+verb - flavor food
+color pepper spice 
+verb - acclimatize, prepare
+train qualify school 

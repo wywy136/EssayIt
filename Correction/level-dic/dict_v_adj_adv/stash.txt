@@ -1,0 +1,4 @@
+verb - hide
+ditch squirrel shroud 
+verb - hoard
+squirrel stockpile cache 

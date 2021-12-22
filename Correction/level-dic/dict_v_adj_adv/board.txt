@@ -1,0 +1,4 @@
+verb - embark on vehicle
+enter catch mount 
+verb - provide food and sleeping quarters
+lodge house canton 

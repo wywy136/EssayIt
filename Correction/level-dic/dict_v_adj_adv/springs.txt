@@ -1,0 +1,4 @@
+verb - jump, skip
+vault lope rebound 
+verb - originate, emerge
+mushroom hatch descend 

@@ -1,0 +1,4 @@
+verb - name, label
+designate characterize baptize 
+verb - hold right to
+empower enable authorize 

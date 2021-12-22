@@ -1,0 +1,2 @@
+verb - transfer data to a server
+transmit connect send 

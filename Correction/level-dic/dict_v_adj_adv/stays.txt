@@ -1,0 +1,6 @@
+verb - wait
+pause delay hover 
+verb - visit
+stop dwell tarry 
+verb - hold in abeyance
+delay stall check 

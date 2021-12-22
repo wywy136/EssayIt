@@ -1,0 +1,4 @@
+verb - congregate
+gather collect summon 
+verb - put together
+construct compile produce 

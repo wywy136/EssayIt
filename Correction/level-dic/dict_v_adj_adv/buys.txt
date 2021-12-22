@@ -1,0 +1,4 @@
+verb - purchase
+procure redeem purchase 
+verb - bribe
+tamper redeem ransom 

@@ -1,0 +1,4 @@
+verb - command a price of
+yield require take 
+verb - harm; exact a penalty
+lose require necessitate 

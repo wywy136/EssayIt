@@ -1,0 +1,2 @@
+verb - rewrite, refine
+compile delete analyze 

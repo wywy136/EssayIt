@@ -1,0 +1,4 @@
+verb - burden, saddle
+stack weight heap 
+verb - overburden, pressure
+weight charge task 

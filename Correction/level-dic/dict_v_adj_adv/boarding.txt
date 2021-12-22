@@ -1,0 +1,4 @@
+verb - embark on vehicle
+mount enter catch 
+verb - provide food and sleeping quarters
+harbor lodge room 

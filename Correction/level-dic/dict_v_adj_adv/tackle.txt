@@ -1,0 +1,4 @@
+verb - make an effort
+try attack begin 
+verb - jump on and grab
+throw catch nail 

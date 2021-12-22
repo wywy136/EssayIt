@@ -1,0 +1,4 @@
+verb - make cold enough to become solid
+harden chill frost 
+verb - stop
+inhibit peg depress 

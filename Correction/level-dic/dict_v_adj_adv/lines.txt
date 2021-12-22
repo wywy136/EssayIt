@@ -1,0 +1,4 @@
+verb - border, mark
+edge array queue 
+verb - put covering inside object
+face fill panel 

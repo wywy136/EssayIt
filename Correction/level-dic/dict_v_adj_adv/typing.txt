@@ -1,0 +1,4 @@
+verb - classify
+tab peg arrange 
+verb - hit keys on machine to print document
+teletype write transcribe 

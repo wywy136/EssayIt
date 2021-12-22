@@ -1,0 +1,4 @@
+verb - jump, skip
+startle rebound bound 
+verb - originate, emerge
+begin emanate arise 

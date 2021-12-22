@@ -1,0 +1,4 @@
+verb - select and give a responsibility
+attribute select attach 
+verb - set apart for a reason
+specify appropriate allocate 

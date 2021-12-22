@@ -1,0 +1,4 @@
+verb - make droning sound
+hum whiz murmur 
+verb - gossip
+chatter rumor call 

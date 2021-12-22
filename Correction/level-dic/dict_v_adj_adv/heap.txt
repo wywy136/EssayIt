@@ -1,0 +1,2 @@
+verb - amass, collect in pile
+stack load dump 

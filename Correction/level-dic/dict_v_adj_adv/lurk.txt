@@ -1,0 +1,2 @@
+verb - hide; move stealthily
+crouch sneak snoop 

@@ -1,0 +1,4 @@
+verb - inspect, examine
+try verify monitor 
+verb - hinder, restrain
+delay interrupt halt 

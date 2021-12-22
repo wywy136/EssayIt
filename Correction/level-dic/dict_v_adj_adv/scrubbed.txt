@@ -1,0 +1,4 @@
+verb - clean with force
+mop cleanse rub 
+verb - cancel
+discontinue abort delete 

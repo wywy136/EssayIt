@@ -1,0 +1,4 @@
+verb - hurry, speed
+flit haste zoom 
+verb - charge, attack
+storm surge capture 

@@ -1,0 +1,2 @@
+verb - pause, rest
+watch stay delay 

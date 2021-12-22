@@ -1,0 +1,4 @@
+verb - remove liquid; remove supply
+sap exhaust pump 
+verb - seep, discharge liquid
+flow leak trickle 
