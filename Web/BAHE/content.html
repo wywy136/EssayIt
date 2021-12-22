@@ -1,0 +1,45 @@
+<html>
+<head>
+<script src=" static/jquery.js"></script>
+</head>
+ <body style="background-color:#EEF8EE">
+
+	  <h2 style="color:#8888FF;font-family:verdana;text-align:center">Please type your direction and content</h2>
+
+<!-- 	  {%- for category, message in get_flashed_messages(with_categories = true) %}
+		 <div class = "alert alert-danger">
+			{{ message }}
+		 </div>
+	  {%- endfor %} -->
+       <div id="loading" style="display:none;"><img src="loading.gif" alt="" />Loading!</div>
+	<div style="text-align:center;vertical-align:middle;">
+	  <form method = "post" action = "/result" >
+
+		 <label for = "title" style="color:#8888FF;font-size:23px;font-family:verdana">Direction</label><br>
+		 <textarea name = "title" placeholder = "Please type direction ..." style="width:700px;height:80px;font-size:17px;font-family:verdana"></textarea><br>
+		 <br />
+		 <label for = "content" style="color:#8888FF;font-size:23px;font-family:verdana">Content</label><br>
+		 <textarea name = "content" placeholder = "Please type content ..." style="width:700px;height:400px;font-size:17px;font-family:verdana"></textarea><br>
+		 <br/>
+
+		  <div class="container">
+		  <div class="radio">
+            <input id="radio-1 " name="level" type="radio" value="1" checked="checked" >
+			<label  for="radio-1" class="radio-label">小学</label>
+            <input id="radio-2" name="level" type="radio" value="2" >
+			<label  for="radio-2" class="radio-label">初中</label>
+			<input id="radio-3" name="level" type="radio" value="3" >
+			<label for="radio-3" class="radio-label">高中</label>
+			<input id="radio-4" name="level" type="radio" value="4" >
+			<label  for="radio-4" class="radio-label">4级</label>
+			<input id="radio-5" name="level" type="radio" value="5" >
+			<label  for="radio-5" class="radio-label">6级</label>
+
+		  </div>
+		</div>
+		 <input type = "submit" value = "Check!"  name='submit_btn' style="width:150px;height:60px;font-size:23px;font-family:verdana;color:#8888FF" onclick="$('#loading').show() ">
+	  </form>
+
+	</div>
+    </body>
+</html>

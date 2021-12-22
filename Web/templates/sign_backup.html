@@ -1,0 +1,17 @@
+<body style="background-color:#EEF8EE">
+
+<br/>
+
+<h2 style="color:#8888FF;font-family:verdana;text-align:center">Signup Now!</h2>
+
+<br/>
+
+<form method="post" style="font-family:verdana;font-size:17px;color:#8888FF;text-align:center">
+    {{form.csrf_token}}
+    {{form.username.label}}:{{form.username}}<br><br/>
+    {{form.password.label}}:{{form.password}}<br><br/>
+    {{form.remember}}{{form.remember.label}}<br><br/>
+    {{form.submit}}<br>
+</form>
+
+</body>

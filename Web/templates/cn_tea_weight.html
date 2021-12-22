@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>教师端</title>
+</head>
+<style type="text/css">
+.myform-control
+{
+width:100%;
+height:34px;
+padding:6px 12px;
+font-size:14px;
+line-height:1.42857143;
+color:#555;
+background-color:#fff;
+background-image:none;border:1px solid #ccc;border-radius:4px;
+-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
+}
+.myform-control:focus{border-color:#66afe9;outline:0;
+-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+.myform-control::-moz-placeholder
+{color:#FFFFFF}
+.myform-control:-ms-input-placeholder
+{color:#FFFFFF}
+.myform-control::-webkit-input-placeholder
+{color:#FFFFFF}
+  #head{width:400px;
+        height:30px;}
+  #head ul{padding:0; margin:0;}
+  #head ul li{ list-style:none; float:left; text-decoration:none; display:block;
+               width:80px;padding:5px; margin:0px 10px 0px 0px; position:relative;}
+  #head ul li a{ text-decoration:none; color:#000000;}
+  #head ul li a:visited{ text-decoration:none; color:#000000;}
+
+ #L1{
+ background-color:#9CC;
+ border-top-color: #F6C;
+ border-right-color: #F6C;
+ border-left-color: #F6C;
+  }
+ #L2{
+   background-color:#CC9;
+   border-color:#309;
+   margin-left:1px;
+  }
+ #L3{
+   background-color:#FF3;
+   border-color:#360;
+  }
+
+
+#d1{
+ background-image:url(../static/img/content1.jpg);
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  min-width: 1000px;
+  z-index:-10;
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;"
+ border:1px solid #C39;
+ width:100%;
+  height:auto;
+  margin-top:30px;
+  position:absolute;
+  z-index:1;
+
+ }
+#d2{
+ background-color:#CC9;
+ border:1px solid #309;
+    display:none;
+ width:100%;
+  height:100%;
+    margin-top:0px;
+    position:absolute;
+    z-index:1;
+ }
+#d3{
+ background-color:white;
+ border:1px solid #360;
+ display:none;
+ width:100%;
+  height:auto;
+  margin-top:0px;
+  position:absolute;
+  z-index:1;
+ }
+
+#d2_1{
+ background-color:sandybrown;
+ width:10%;
+  z-index:0;
+        float:left;
+    height:auto;
+ }
+#d2_2{
+ background-color:darksalmon;
+ width:90%;
+  z-index:0;
+    float:right;
+    height:auto;
+ }
+#tablebox{
+    margin-top:12px;
+    margin-left:12px;
+    margin-right:12px;
+    font-size:24px;
+}
+
+
+</style>
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/Highcharts/code/highcharts.js"></script>
+<script type="text/javascript">
+	//更换背景
+	var nowbg = 1;
+	function changebg(){
+
+		var name;
+		name = 'url(../static/img/content'+String(nowbg)+'.jpg)';
+		nowbg = nowbg + 1;
+		if (nowbg == 3)  //现有图片数目+1
+		{
+			document.getElementById('d1').style.backgroundImage='url(../static/img/content1.jpg)';
+			nowbg = 1;
+		}
+		else
+		{
+			name = 'url(../static/img/content'+String(nowbg)+'.jpg)';
+			document.getElementById('d1').style.backgroundImage=name;
+		}
+	}
+	$(document).ready(function(e) {
+     var temp_1 = document.getElementById("c1").value / 1;
+    var temp_2 = document.getElementById("c2").value / 1;
+    var temp_3 = document.getElementById("c3").value / 1;
+    var temp_4 = document.getElementById("c4").value / 1;
+    var temp_5 = document.getElementById("c5").value / 1;
+$("#alartTxt").html("请保证五项加和为100，当你填入四项时最后一项会自动给出，如果你已经填入的总和大于100，系统会让你不能再填入。现在你还最大可以填入" + (100 - temp_1 - temp_2 - temp_3 - temp_4 - temp_5));
+});
+	function check_total(x) {
+    var temp_1 = document.getElementById("c1").value / 1;
+    var temp_2 = document.getElementById("c2").value / 1;
+    var temp_3 = document.getElementById("c3").value / 1;
+    var temp_4 = document.getElementById("c4").value / 1;
+    var temp_5 = document.getElementById("c5").value / 1;
+    $("#alartTxt").html("请保证五项加和为100，当你填入四项时最后一项会自动给出，如果你已经填入的总和大于100，系统会让你不能再填入。现在你还最大可以填入" + (100 - temp_1 - temp_2 - temp_3 - temp_4 - temp_5));
+    if (temp_1 > 100 - temp_2 - temp_3 - temp_3 - temp_4 - temp_5) {
+        document.getElementById(x).value = 100 - temp_1 - temp_2 - temp_3 - temp_4 - temp_5 + document.getElementById(x).value/1;
+    }
+
+}
+    function loading(){
+        $("#loading").show();
+        $("#Main").hide();
+    }
+    function Tab(num){
+    var i;
+    for(i=1;i<=num+10;i++)
+    {
+        if(i==num)
+           document.getElementById("d"+i).style.display="block";
+         else
+           document.getElementById("d"+i).style.display="none";
+    }
+}
+	function randomString(len) {
+　　len = len || 32;
+　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZ2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+　　var maxPos = $chars.length;
+　　var pwd = '';
+　　for (i = 0; i < len; i++) {
+　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+　　return pwd;
+}
+
+</script>
+
+<body style="height:100%;">
+<div id="head">
+<ul>
+ <li id="L1" onclick="Tab(1)"><a href="#">发布范文</a></li>
+ <li id="L2" onclick="Tab(2)"><a href="#">学生信息</a></li>
+ <li id="L3" onclick="Tab(3)"><a href="#">总体概况</a></li>
+ <li id="bg" onclick="changebg()"><a href="#">更换背景</a></li>
+</ul>
+</div>
+
+<div id="d1">
+<ul>
+ <body style="background:url(../static/img/content1.jpg); background-size:100% 100%; background-attachment: fixed;">
+	  <form method = "post" >
+	  <h2 style="color:#8888FF;font-family:verdana;text-align:center">请输入题目及范文</h2>
+              <input type="hidden" id="ids" name="ids"/>
+      <div style="color:white;font-size:23px;text-align: center">
+          您的班级码为:
+                          <script type="text/javascript">
+                        var code1 = {{code|tojson}};
+                        document.write(code1);
+                        document.getElementById("ids").value = code1.toLocaleLowerCase()
+                          </script>
+      </div>
+
+   <div id="loading"></div>
+
+	<div style="text-align:center;vertical-align:middle;">
+
+		 <label for = "title" style="color:#8888FF;font-size:23px;font-family:verdana">题目</label><br>
+		 <textarea name = "title" class="myform-control" placeholder = "请输入题目..." style="width:700px;height:80px;font-size:17px;font-family:verdana;color:black;filter:alpha(opacity=40);background-color: rgb(0, 0, 0);background-color: rgba(224, 242, 241, 0.4)"></textarea><br>
+		 <br />
+		 <label for = "content" style="color:#8888FF;font-size:23px;font-family:verdana">范文</label><br>
+		 <textarea name = "content" class="myform-control" placeholder = "请输入范文..." style="width:700px;height:400px;font-size:17px;font-family:verdana;color:black;filter:alpha(opacity=40);background-color: rgb(0, 0, 0);background-color: rgba(224, 242, 241, 0.4)"></textarea><br>
+		 <br/>
+
+		  <div class="container">
+		  <div class="radio" style="color:blue;text-align:center;">
+	        <input id="radio-1 " name="level" type="radio" value="1" checked="checked" >
+			<label  for="radio-1" class="radio-label">初中&#12288;&#12288;</label>
+
+			<input id="radio-2" name="level" type="radio" value="2" >
+			<label  for="radio-2" class="radio-label">高中&#12288;&#12288;</label>
+			<input id="radio-3" name="level" type="radio" value="3" >
+			<label for="radio-3" class="radio-label">大学&#12288;&#12288;</label>
+			<input id="radio-4" name="level" type="radio" value="4" >
+			<label  for="radio-4" class="radio-label">托福/雅思&#12288;&#12288;</label>
+			<input id="radio-5" name="level" type="radio" value="5" >
+			<label  for="radio-5" class="radio-label">GRE</label>
+          </div>
+          </div>
+		  <p id="alartTxt" style="text-align:center;"></p>
+          <input id="c1" name="criteria_1"  placeholder="请输入对应占比" value=0 style=" width: 50px; height: 20px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;margin-left:100px;" onchange="check_total(this.id);" > 拼写
+          <input id="c2" name="criteria_2"  placeholder="请输入对应占比" value=0 style=" width: 50px; height: 20px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;margin-left:50px;" onchange="check_total(this.id);" > 语法
+          <input id="c3" name="criteria_3"  placeholder="请输入对应占比" value=0 style=" width: 50px; height: 20px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;margin-left:50px;" onchange="check_total(this.id);" > 词汇
+          <input id="c4" name="criteria_4"  placeholder="请输入对应占比" value=0 style=" width: 50px; height: 20px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;margin-left:50px;" onchange="check_total(this.id);" > 句式
+          <input id="c5" name="criteria_5"  placeholder="请输入对应占比" value=0 style=" width: 50px; height: 20px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;border-top-left-radius: 10px;border-top-right-radius: 10px;margin-left:50px;" onchange="check_total(this.id);" > 主题
+
+      <div id="scrollBar4">
+      <div id="scroll_Track4"></div>
+      <div id="scroll_Thumb4"></div>
+       <br>
+        <input id="c4" name="criteria_4" value=0 style="display:none" >
+  </div>
+    <p id="scrollBarTxt4" style="text-align:center;"></p>
+<br>
+  <input type = "submit" class="btn btn-info" value = "上传" style="width:150px;height:60px;font-size:28px;font-family:verdana;color:#F1E0F2"  onclick="loading();">
+  </div>
+  </div>
+  </form>
+    </body>
+</ul>
+</div>
+<div id="d2" >
+<ul>
+<div id="pages" style="height:100%;">
+<div id="d2_1" ></div>
+<div id="d2_2" ></div>
+</div>
+    <script>
+    var names = {{names|tojson}};
+    var length = {{length|tojson}};
+    var scores = {{scores|tojson}};
+
+    var d2_1 = document.getElementById("d2_1");
+     for(i=0;i<length;i++)
+     {
+            var bu=document.createElement("BUTTON");
+            var gzText=document.createTextNode(names[i]);
+            bu.id = i
+            bu.appendChild(gzText);
+            d2_1.appendChild(bu);
+            bu.style.width = "100%";
+            bu.style.height = "50px";
+            bu.style.backgroundImage ="linear-gradient(#f5c153, #ea920d)";
+     }
+
+     var btns = document.getElementsByTagName('BUTTON');
+     var d2_2 = document.getElementById("d2_2")
+     var scorestype=["拼写", "语法", "词汇", "句式", "主题", "总"];
+    //使用自执行函数的方式解决
+    for(var i = 0; i<btns.length;i++){
+        var btn = btns[i];
+        (function(i){
+                btn.onclick = function () {
+                    var childs = d2_2.childNodes;
+                        for(var k = childs.length - 1; k >= 0; k--)
+                        {
+　　                              d2_2.removeChild(childs[k]);
+                        }
+                    for(j=0;j < scores[i].length;j++)
+                    {
+                        var txt = document.createElement("div");
+                        d2_2.appendChild(txt);
+                        txt.innerText =  scores[i][j][0];
+                        var taObj = document.createElement("table");
+                        d2_2.appendChild(taObj)
+                        for (var h = 1; h <= 6; h++) {
+                            //创建行,在行中添加内容,并且追加到父元素table中
+                            var trObj = document.createElement("td");
+                            taObj.appendChild(trObj);
+                            trObj.style.width = "20%";
+                            //创建第一个列,然后加入到行中
+                            var td1 = document.createElement("tr");
+                            td1.innerHTML = scorestype[h-1];
+                            td1.style.textAlign="center";
+                            td1.style.width = "100%";
+                            td1.style.height = "50px";
+                            trObj.appendChild(td1);
+                            //创建第二个列,然后加入到行中
+                            var td2 = document.createElement("tr");
+                            td2.innerHTML = scores[i][j][h];
+                            td2.style.width = "100%";
+                            td2.style.height = "50px";
+                            trObj.appendChild(td2);
+                }
+                    taObj.style.cssText = "border:2px; border-style:dashed dashed dashed dashed; border-color:purple";
+                        var line = document.createElement("HR");
+                        line.style.color = "purple";
+                        line.style.size = 1;
+                        d2_2.appendChild(line)
+                    }
+                };
+
+        })(i);
+    }
+
+
+     </script>
+</ul>
+</div>
+<div id="d3">
+<ul>
+    <div>
+    					<div id="pie_1" style="float:left;width:540px;height:300px;margin-top:0px;margin-right:0px; color:yellow"; ></div>
+                        <div id="pie_2" style="float:right;width:540px;height:300px;margin-top:0px;margin-right:0px; color:yellow"; ></div>
+    </div>
+    <div id="pie_3" style="float:left;width:540px;height:300px;margin-top:0px;margin-right:0px; color:yellow"; ></div>
+    <div id="pie_4" style="float:right;width:540px;height:300px;margin-top:0px;margin-right:0px; color:yellow"; ></div>
+    <script>
+        var pie_1 = {{pie_1|tojson}};
+        var pie_2 = {{pie_2|tojson}};
+        var pie_3 = {{pie_3|tojson}};
+        var pie_4 = {{pie_4|tojson}};
+    $(document).ready(function() {
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {
+      text: "统计数据(词汇)"
+   };
+   var tooltip = {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: "pointer",
+         dataLabels: {
+            enabled: true,
+            format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+            }
+         }
+      }
+   };
+   var series= [{
+      type: "pie",
+      name: "Percentage",
+      data: pie_1}];
+
+   var json = {};
+   json.chart = chart;
+   json.title = title;
+   json.tooltip = tooltip;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $("#pie_1").highcharts(json);
+});
+    $(document).ready(function() {
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {
+      text: "统计数据(句式)"
+   };
+   var tooltip = {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: "pointer",
+         dataLabels: {
+            enabled: true,
+            format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+            }
+         }
+      }
+   };
+   var series= [{
+      type: "pie",
+      name: "Percentage",
+      data: pie_2}];
+
+   var json = {};
+   json.chart = chart;
+   json.title = title;
+   json.tooltip = tooltip;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $("#pie_2").highcharts(json);
+});
+    $(document).ready(function() {
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {
+      text: "统计数据(主/被动)"
+   };
+   var tooltip = {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: "pointer",
+         dataLabels: {
+            enabled: true,
+            format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+            }
+         }
+      }
+   };
+   var series= [{
+      type: "pie",
+      name: "Percentage",
+      data: pie_3}];
+
+   var json = {};
+   json.chart = chart;
+   json.title = title;
+   json.tooltip = tooltip;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $("#pie_3").highcharts(json);
+});
+    $(document).ready(function() {
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {
+      text: "统计数据(主题)"
+   };
+   var tooltip = {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: "pointer",
+         dataLabels: {
+            enabled: true,
+            format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+            }
+         }
+      }
+   };
+   var series= [{
+      type: "pie",
+      name: "Percentage",
+      data: pie_4}];
+
+   var json = {};
+   json.chart = chart;
+   json.title = title;
+   json.tooltip = tooltip;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $("#pie_4").highcharts(json);
+});
+</script>
+</ul>
+</div>
+
+</body>
+</html>

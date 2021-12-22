@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+	<link rel='stylesheet' href="../static/css/bootstrap4.min.css">
+<style>
+ .container {}
+</style>
+
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	    function tutor_display(){
+        $("#string_").show();
+		$('#input_string').hide();
+    }
+    function student_display(){
+        $("#string_").hide();
+		$('#input_string').show();
+    }
+function randomString(len) {
+　　len = len || 32;
+　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZ2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+　　var maxPos = $chars.length;
+　　var pwd = '';
+　　for (i = 0; i < len; i++) {
+　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+　　return pwd;
+}
+</script>
+</head>
+
+<body style="position:fixed;
+  background-image:url(../static/img/content.jpg);
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  min-width: 1000px;
+  z-index:-10;
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;"
+>
+<h2 style="color:#8888FF;font-family:verdana;text-align:center">Signup Now!</h2>
+
+<br/>
+<div style="text-align:center;vertical-align:middle;">
+<form method="post" class="container" style="width: 25vw;margin-top: 1em;background-color: #e0f2f1;padding: 2em;filter:alpha(opacity=40);background-color: rgb(224, 242, 241);background-color: rgba(224, 242, 241, 0.4)">
+    {{form.csrf_token}}
+
+    <label for="username">Username: </label>
+	<input type="text/username" class="form-control" name="username" placeholder="Enter Username" autocomplete="off" style="filter:alpha(opacity=40);background-color: rgb(224, 242, 241);background-color: rgba(224, 242, 241, 0.4)"><br>
+
+	<label for="password">Password(密码长度大于等于6) : </label>
+    <input type="password" class="form-control" name="password" placeholder="Enter Password" autocomplete="off" style="filter:alpha(opacity=40);background-color: rgb(224, 242, 241);background-color: rgba(224, 242, 241, 0.4)"><br>
+
+    {{form.remember}}{{form.remember.label}}<br><br/>
+    <div class="custom-control custom-radio custom-control-inline">
+        <label  for="radio-1" class="custom-control custom-radio d-block my-2">
+			<input id="radio-1" name="character" type="radio" value="0" checked="checked" onclick="student_display()" class="custom-control-input" required>
+				<span class="custom-control-indicator"></span>
+				<span class="custom-control-description">I am a student</span>
+		</label>
+        <label  for="radio-2" class="custom-control custom-radio d-block my-2">
+			<input id="radio-2" name="character" type="radio" value="1" onclick="tutor_display();" class="custom-control-input" required>
+				<span class="custom-control-indicator"></span>
+				<span class="custom-control-description">I am a tutor</span>
+		</label>
+    </div>
+
+    <div id="input_string">
+        Please enter your serial number:
+			<input id="valid_code" name="valid_code" value="Please input" onfocus="javascript:if(this.value=='Please input')this.value=''" onblur="javascript:if(this.value=='')this.value='Please input';" required>
+    </div>
+     <div id="string_" style="display:none;">
+    </div>
+
+	<br>
+
+	<div style="text-align:center">
+		<button type="submit" class="btn btn-success">Register</button>
+	</div>
+
+</form>
+
+</div>
+</body>
+</html>

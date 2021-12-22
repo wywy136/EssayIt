@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <title>Test</title>
+
+    <script src="./js/jquery.min.js"></script>
+
+    <style>
+        .progress_a{position: absolute;top:100px;left:50px; width:200px;}
+        .progress_bg_a{height: 10px; border: 1px solid #ddd; overflow: hidden;background-color:#f2f2f2;}
+        .progress_bar_a{background: #5FB878; width: 200; height: 10px; border-radius: 5px;}
+        .progress_btn_a{width: 20px; height: 20px; border-radius: 5px; position: absolute;background:#fff; 
+        left: 200px; margin-left: -10px; top:-5px; cursor: pointer;border:1px #ddd solid;box-sizing:border-box;}
+        .progress_btn_a:hover{border-color:#F7B824;}
+		
+        .progress_b{position: absolute;top:150px;left:50px; width:200px;}
+        .progress_bg_b{height: 10px; border: 1px solid #ddd; overflow: hidden;background-color:#f2f2f2;}
+        .progress_bar_b{background: #FFCCFF; width: 200; height: 10px; border-radius: 5px;}
+        .progress_btn_b{width: 20px; height: 20px; border-radius: 5px; position: absolute;background:#fff; 
+        left: 200px; margin-left: -10px; top:-5px; cursor: pointer;border:1px #ddd solid;box-sizing:border-box;}
+        .progress_btn_b:hover{border-color:#F7B824;}
+		
+        .progress_c{position: absolute;top:200px;left:50px; width:200px;}
+        .progress_bg_c{height: 10px; border: 1px solid #ddd; overflow: hidden;background-color:#f2f2f2;}
+        .progress_bar_c{background: #FEFF00; width: 200; height: 10px; border-radius: 5px;}
+        .progress_btn_c{width: 20px; height: 20px; border-radius: 5px; position: absolute;background:#fff; 
+        left: 200px; margin-left: -10px; top:-5px; cursor: pointer;border:1px #ddd solid;box-sizing:border-box;}
+        .progress_btn_c:hover{border-color:#F7B824;}
+		
+        .progress_d{position: absolute;top:250px;left:50px; width:200px;}
+        .progress_bg_d{height: 10px; border: 1px solid #ddd; overflow: hidden;background-color:#f2f2f2;}
+        .progress_bar_d{background: #B84CF1; width: 200; height: 10px; border-radius: 5px;}
+        .progress_btn_d{width: 20px; height: 20px; border-radius: 5px; position: absolute;background:#fff; 
+        left: 200px; margin-left: -10px; top:-5px; cursor: pointer;border:1px #ddd solid;box-sizing:border-box;}
+        .progress_btn_d:hover{border-color:#F7B824;}
+    </style>
+
+</head>
+
+   <body style="background-color:#EEF8EE">
+
+    <div class="progress_a">
+        <div class="progress_bg_a">
+            <div class="progress_bar_a"></div>
+        </div>
+        <div class="progress_btn_a"></div>
+        <div class="text_a">主被动:100%</div>
+    </div>
+	
+    <div class="progress_b">
+        <div class="progress_bg_b">
+            <div class="progress_bar_b"></div>
+        </div>
+        <div class="progress_btn_b"></div>
+        <div class="text_b">陈述句:100%</div>
+    </div>
+	
+    <div class="progress_c">
+        <div class="progress_bg_c">
+            <div class="progress_bar_c"></div>
+        </div>
+        <div class="progress_btn_c"></div>
+        <div class="text_c">并列句:100%</div>
+    </div>
+	
+    <div class="progress_d">
+        <div class="progress_bg_d">
+            <div class="progress_bar_d"></div>
+        </div>
+        <div class="progress_btn_d"></div>
+        <div class="text_d">简单/复合句:100%</div>
+    </div>
+
+	<h2 style="color:#8888FF;font-family:verdana;text-align:center">Please type your direction and content</h2>
+
+	<div style="text-align:center;vertical-align:middel;">
+	  <form action = "{{ request.path }}" method = "post">
+		 <label for = "title" style="color:#8888FF;font-size:23px;font-family:verdana">Direction</label><br>
+		 <textarea name = "title" placeholder = "Please type direction ..." style="width:700px;height:80px;font-size:17px;font-family:verdana"></textarea><br>
+		 <br />
+		 <label for = "content" style="color:#8888FF;font-size:23px;font-family:verdana">Content</label><br>
+		 <textarea name = "content" placeholder = "Please type content ..." style="width:700px;height:400px;font-size:17px;font-family:verdana"></textarea><br>
+		 <br/>
+		 <input type = "submit" value = "Check!" style="width:150px;height:60px;font-size:23px;font-family:verdana;color:#8888FF"/>
+	  </form>
+	</div>
+
+   </body>
+   
+<script type="text/javascript">
+$(function(){
+    var tag = false,ox = 0,left = 200,bgleft = 0;
+    $('.progress_btn_a').mousedown(function(e) {
+        ox = e.pageX - left;
+        tag = true;
+    });
+
+    $(document).mouseup(function() {
+        tag = false;
+    });
+
+    $('.progress_a').mousemove(function(e) {//鼠标移动
+        if (tag) {
+             left = e.pageX - ox;
+             if (left <= 0) {
+                left = 0;
+             }else if (left > 200) {
+                left = 200;
+             }
+            $('.progress_btn_a').css('left', left);
+            $('.progress_bar_a').width(left);
+            $('.text_a').html('主被动:' + parseInt((left/200)*100) + '%');
+        }
+    });
+
+    $('.progress_bg_a').click(function(e) {//鼠标点击
+         if (!tag) {
+             bgleft = $('.progress_bg_a').offset().left;
+             left = e.pageX - bgleft;
+             if (left <= 0) {
+                 left = 0;
+            }else if (left > 200) {
+                 left = 200;
+            }
+            $('.progress_btn_a').css('left', left);
+            $('.progress_bar_a').animate({width:left},200);
+            $('.text_a').html('主被动:' + parseInt((left/200)*100) + '%');
+         }
+    });
+});
+
+$(function(){
+    var tag = false,ox = 0,left = 200,bgleft = 0;
+    $('.progress_btn_b').mousedown(function(e) {
+        ox = e.pageX - left;
+        tag = true;
+    });
+
+    $(document).mouseup(function() {
+        tag = false;
+    });
+
+    $('.progress_b').mousemove(function(e) {//鼠标移动
+        if (tag) {
+             left = e.pageX - ox;
+             if (left <= 0) {
+                left = 0;
+             }else if (left > 200) {
+                left = 200;
+             }
+            $('.progress_btn_b').css('left', left);
+            $('.progress_bar_b').width(left);
+            $('.text_b').html('陈述句:' + parseInt((left/200)*100) + '%');
+        }
+    });
+
+    $('.progress_bg_b').click(function(e) {//鼠标点击
+         if (!tag) {
+             bgleft = $('.progress_bg_b').offset().left;
+             left = e.pageX - bgleft;
+             if (left <= 0) {
+                 left = 0;
+            }else if (left > 200) {
+                 left = 200;
+            }
+            $('.progress_btn_b').css('left', left);
+            $('.progress_bar_b').animate({width:left},200);
+            $('.text_b').html('陈述句:' + parseInt((left/200)*100) + '%');
+         }
+    });
+	
+});
+
+$(function(){
+    var tag = false,ox = 0,left = 200,bgleft = 0;
+    $('.progress_btn_c').mousedown(function(e) {
+        ox = e.pageX - left;
+        tag = true;
+    });
+
+    $(document).mouseup(function() {
+        tag = false;
+    });
+
+    $('.progress_c').mousemove(function(e) {//鼠标移动
+        if (tag) {
+             left = e.pageX - ox;
+             if (left <= 0) {
+                left = 0;
+             }else if (left > 200) {
+                left = 200;
+             }
+            $('.progress_btn_c').css('left', left);
+            $('.progress_bar_c').width(left);
+            $('.text_c').html('并列句:' + parseInt((left/200)*100) + '%');
+        }
+    });
+
+    $('.progress_bg_c').click(function(e) {//鼠标点击
+         if (!tag) {
+             bgleft = $('.progress_bg_c').offset().left;
+             left = e.pageX - bgleft;
+             if (left <= 0) {
+                 left = 0;
+            }else if (left > 200) {
+                 left = 200;
+            }
+            $('.progress_btn_c').css('left', left);
+            $('.progress_bar_c').animate({width:left},200);
+            $('.text_c').html('并列句:' + parseInt((left/200)*100) + '%');
+         }
+    });
+});
+
+$(function(){
+    var tag = false,ox = 0,left = 200,bgleft = 0;
+    $('.progress_btn_d').mousedown(function(e) {
+        ox = e.pageX - left;
+        tag = true;
+    });
+
+    $(document).mouseup(function() {
+        tag = false;
+    });
+
+    $('.progress_d').mousemove(function(e) {//鼠标移动
+        if (tag) {
+             left = e.pageX - ox;
+             if (left <= 0) {
+                left = 0;
+             }else if (left > 200) {
+                left = 200;
+             }
+            $('.progress_btn_d').css('left', left);
+            $('.progress_bar_d').width(left);
+            $('.text_d').html('简单/复合句:' + parseInt((left/200)*100) + '%');
+        }
+    });
+
+    $('.progress_bg_d').click(function(e) {//鼠标点击
+         if (!tag) {
+             bgleft = $('.progress_bg_d').offset().left;
+             left = e.pageX - bgleft;
+             if (left <= 0) {
+                 left = 0;
+            }else if (left > 200) {
+                 left = 200;
+            }
+            $('.progress_btn_d').css('left', left);
+            $('.progress_bar_d').animate({width:left},200);
+            $('.text_d').html('简单/复合句:' + parseInt((left/200)*100) + '%');
+         }
+    });
+});
+</script>
+
+   
+</html>

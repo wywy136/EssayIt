@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+<style type="text/css">
+</style>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+	    function tutor_display(){
+        $("#string_").show();
+		$('#input_string').hide();
+    }
+    function student_display(){
+        $("#string_").hide();
+		$('#input_string').show();
+    }
+function randomString(len) {
+　　len = len || 32;
+　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZ2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+　　var maxPos = $chars.length;
+　　var pwd = '';
+　　for (i = 0; i < len; i++) {
+　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+　　}
+　　return pwd;
+}
+	</script>
+</head>
+
+<body style="background-color:#EEF8EE">
+<h2 style="color:#8888FF;font-family:verdana;text-align:center">Signup Now!</h2>
+
+<br/>
+<div style="text-align:center;vertical-align:middle;">
+<form method="post" style="font-family:verdana;font-size:17px;color:#8888FF;text-align:center">
+    {{form.csrf_token}}
+    {{form.username.label}}:{{form.username}}<br><br/>
+    {{form.password.label}}:{{form.password}}<br><br/>
+    {{form.remember}}{{form.remember.label}}<br><br/>
+    <div class="radio">
+        <input id="radio-1 " name="character" type="radio" value="0" checked="checked" onclick="student_display()">
+        <label  for="radio-1" class="radio-label">I am a student</label>
+        <input id="radio-2" name="character" type="radio" value="1" onclick="tutor_display();" >
+        <label  for="radio-2" class="radio-label">I am a tutor</label>
+
+    </div>
+        <div id="input_string" style="display:none;">
+        请输入作业码：
+                    <input id="valid_code" name="valid_code" value=0>
+    </div>
+     <div id="string_" style="display:none;">
+        您的作业码是：
+                    <script type="text/javascript">
+                        var code = randomString(6)
+                        document.write(code);
+                        document.getElementById("valid_code").value = code.toLocaleLowerCase()
+</script>
+    </div>
+    {{form.submit}}<br>
+
+</form>
+
+</div>>
+</body>
+</html>>

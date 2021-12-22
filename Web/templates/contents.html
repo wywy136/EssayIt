@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <title>Test</title>
+
+    <script src="../static/js/jquery.min.js"></script>
+
+
+</head>
+
+   <body style="background-color:#EEF8EE">
+	<h2 style="color:#8888FF;font-family:verdana;text-align:center">Please type your direction and content</h2>
+
+	<div style="text-align:center;vertical-align:middel;">
+	  <form action = "{{ request.path }}" method = "post">
+		 <label for = "title" style="color:#8888FF;font-size:23px;font-family:verdana">Direction</label><br>
+		 <textarea name = "title" placeholder = "Please type direction ..." style="width:700px;height:80px;font-size:17px;font-family:verdana"></textarea><br>
+		 <br />
+		 <label for = "content" style="color:#8888FF;font-size:23px;font-family:verdana">Content</label><br>
+		 <textarea name = "content" placeholder = "Please type content ..." style="width:700px;height:400px;font-size:17px;font-family:verdana"></textarea><br>
+		 <br/>
+		 <input type = "submit" value = "Check!" style="width:150px;height:60px;font-size:23px;font-family:verdana;color:#8888FF"/>
+	  </form>
+	</div>
+	
+
+   </body>
+   
+
+
+   
+</html>

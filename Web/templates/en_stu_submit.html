@@ -1,0 +1,471 @@
+<html>
+
+<style type="text/css">
+/*左侧导航	*/
+html {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* _-_-_-_-__ morphing navigation styling __-_-_-_-_ */
+
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+/* 三道横左/上边距+选项卡形状 */
+.navigation {
+  width: 100px;
+  height: 50%;
+  display: block;
+  padding-right: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0% 0% 0% 0%;
+  perspective: 800;
+  transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+/* 悬浮手范围+三道横左/上边距 */
+.navigation__icon {
+  width: 55px;
+  height: 44px;
+  display: block;
+  position: relative;
+  /* top: 22%;
+  left: 35%; */
+  top: 1%;
+  left: 15%;
+  background: hsla(312, 51%, 41%, 0.0);
+  cursor: pointer;
+  transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+/* 第一道横线 */
+.navigation__icon .topBar {
+  /* width: 55px;*/
+  width: 40px;
+  height: 2px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 10px;
+  transform: rotate(0);
+  transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+/* 第二道横线 */
+.navigation__icon .middleBar {
+  /* width: 55px;*/
+  width: 40px;
+  height: 2px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 20px;
+  transform: rotate(0);
+   transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+/* 第三道横线 */
+.navigation__icon .bottomBar {
+  /* width: 35px; */
+  width: 26px;
+  height: 2px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 30px;
+  transform: rotate(0);
+  transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+/* 文字菜单top/left位置 */
+.navigation .navigation__ul {
+  float: right;
+  margin-top: 20px;
+  margin-right: -85px;
+  opacity: 0;
+  visibility: hidden;
+  transform: rotateY(-90deg) translateX(-300px);
+  transition: all 800ms cubic-bezier(.9, 0, .33, 1);
+}
+
+.navigation .navigation__ul li {
+  list-style: none;
+  text-align: right;
+}
+
+/* 字号大小 */
+.navigation .navigation__ul a {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.navigation .navigation__ul a:hover {
+  color: hsl(185, 96%, 33%);
+}
+
+.navigation .navigation__social {
+  width: 100%;
+  height: 30px;
+  padding-right: 45px;
+  position: absolute;
+  bottom: 18%;
+}
+
+/* 伸展宽度+高度 */
+.navigation-open {
+  width: 100px;
+  height: 50%;
+  display: block;
+  position: absolute;
+  left: 0;
+  border-radius: 0% 1% 1% 0%;
+}
+
+.navigation-open .navigation__ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation-open .navigation__social-ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navigation-open .topBar {
+  top: 21px;
+  transform: rotate(45deg);
+}
+
+/* 动画 */
+.navigation-open .middleBar {
+  width: 0;
+  top: 22px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(30px);
+}
+
+/* 叉形状 */
+.navigation-open .bottomBar {
+  /* width: 55px; */
+  width: 40px;
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+.navigation-open .navigation__ul {
+  transform: rotateY(0) translateX(0);
+}
+
+.navigation-open .navigation__social-ul {
+  transform: rotateY(0) translateX(0);
+}
+
+.navigation-open .navigation__social-ul li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.navigation-open .navigation__social-ul li:nth-child(1) {
+  transition-delay: .5s;
+}
+
+.navigation-open .navigation__social-ul li:nth-child(2) {
+  transition-delay: .46s;
+}
+
+.navigation-open .navigation__social-ul li:nth-child(3) {
+  transition-delay: .43s;
+}
+
+.navigation-open .navigation__social-ul li:nth-child(4) {
+  transition-delay: .4s;
+}
+
+
+#loading {
+  top: 50%;
+  left: 50%;
+  left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  z-index: 15;
+  display: none;
+}
+
+#main{
+	text-align:center;
+	vertical-align:middle;
+}
+
+.myform-control
+{
+width:100%;
+height:34px;
+padding:6px 12px;
+font-size:14px;
+line-height:1.42857143;
+color:#555;
+background-color:#fff;
+background-image:none;border:1px solid #ccc;border-radius:4px;
+-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
+}
+.myform-control:focus{border-color:#66afe9;outline:0;
+-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+.myform-control::-moz-placeholder
+{color:#FFFFFF}
+.myform-control:-ms-input-placeholder
+{color:#FFFFFF}
+.myform-control::-webkit-input-placeholder
+{color:#FFFFFF}
+</style>
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel='stylesheet' href="../../static/css/bootstrap.min.css">
+
+  <script src="../../static/js/jquery.min.js"></script>
+
+</head>
+
+<script type="text/javascript">
+	//左侧导航显示
+	$(function() {
+	   $(".navigation__icon").click(function() {
+		 $(".navigation").toggleClass('navigation-open');
+	   });
+	 });
+
+	//当前提交
+	function newart(){
+		if (document.getElementById("newart").style.display == "none")
+		{
+			document.getElementById("newart").style.display="block";
+			document.getElementById("oldart").style.display="none";
+		}
+	}
+
+	// 历史记录
+	var havehist = {{havehist|tojson}};
+	var scores = {{scores|tojson}};
+
+	// alert(mytitle);
+	// var myDiv = document.getElementById("divId");
+    // myDiv.innerHTML = "Content To Show";
+	// // alert(document.getElementById("yourtitle").innerHTML);
+
+	function oldart() {
+		if (havehist == 1)  //有历史
+		{
+			if (document.getElementById("oldart").style.display == "none") {
+				document.getElementById("newart").style.display = "none";
+				document.getElementById("oldart").style.display = "block";
+
+				var names = ['LZ'];
+				var length = 1;
+				var d2_1 = document.getElementById("d2_1");
+				for (i = 0; i < length; i++) {
+					var bu = document.createElement("BUTTON");
+					var gzText = document.createTextNode(names[i]);
+					bu.id = i;
+					bu.appendChild(gzText);
+					d2_1.appendChild(bu);
+					bu.style.width = "80%";
+					bu.style.height = "50px";
+					bu.style.display = "none";
+					bu.style.backgroundImage = "linear-gradient(#f5c153, #ea920d)";
+				}
+				var btns = document.getElementsByTagName('BUTTON');
+				var d2_2 = document.getElementById("d2_2");
+				var scorestype=["Spell", "Grammar", "Vocabulary", "Pattern", "Topic", "Total"];
+				//使用自执行函数的方式解决
+				for (var i = 0; i < btns.length; i++) {
+					var btn = btns[i];
+
+					var childs = d2_2.childNodes;
+					for (var k = childs.length - 1; k >= 0; k--) {
+						d2_2.removeChild(childs[k]);
+					}
+					for (j = 0; j < scores[i].length; j++) {
+						var txt = document.createElement("div");
+						d2_2.appendChild(txt);
+						txt.innerText = scores[i][j][0];
+						var taObj = document.createElement("table");
+						d2_2.appendChild(taObj);
+						for (var h = 1; h <= 6; h++) {
+							//创建行,在行中添加内容,并且追加到父元素table中
+							var trObj = document.createElement("td");
+							taObj.appendChild(trObj);
+							trObj.style.width = "20%";
+							//创建第一个列,然后加入到行中
+							var td1 = document.createElement("tr");
+                            td1.innerHTML = scorestype[h-1];
+							td1.style.textAlign = "center";
+							td1.style.width = "100%";
+							td1.style.height = "50px";
+							trObj.appendChild(td1);
+							//创建第二个列,然后加入到行中
+							var td2 = document.createElement("tr");
+							td2.innerHTML = scores[i][j][h];
+							td2.style.width = "100%";
+							td2.style.height = "50px";
+							trObj.appendChild(td2);
+						}
+						taObj.style.cssText = "border:2px; border-style:dashed dashed dashed dashed; border-color:purple";
+						var line = document.createElement("HR");
+						line.style.color = "purple";
+						line.style.size = 1;
+						d2_2.appendChild(line)
+					}(i);
+				}
+			}
+		}
+	}
+
+	//更换背景
+	var nowbg = 1;
+	function changebg(){
+		var name;
+		name = 'url(../../static/img/content'+String(nowbg)+'.jpg)';
+		nowbg = nowbg + 1;
+		if (nowbg == 3)  //现有图片数目+1
+		{
+			document.getElementById('back').style.backgroundImage='url(../../static/img/content1.jpg)';
+			nowbg = 1;
+		}
+		else
+		{
+			name = 'url(../../static/img/content'+String(nowbg)+'.jpg)';
+			document.getElementById('back').style.backgroundImage=name;
+		}
+	}
+
+	function loading(){
+		$("#loading").show();
+		$('#main').hide();
+	}
+
+</script>
+
+<body id="back"
+  style="background-image:url(../../static/img/content1.jpg);
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  min-width: 1000px;
+  z-index:-10;
+  zoom: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;"
+>
+
+	<title>Student End</title>
+	<!--左侧导航-->
+	<nav class="navigation">
+		<section class="logo"></section>
+		<section class="navigation__icon">
+		  <span class="topBar"></span>
+		  <span class="middleBar"></span>
+		  <span class="bottomBar"></span>
+		</section>
+		<ul class="navigation__ul">
+			<li><a onclick="newart()" href="#">new upload</a></li>
+			<li><a onclick="oldart()" href="#">old upload</a></li>
+			<li><a onclick="changebg()" href="#">change&#8194;&#8194;&#8194;<br>background</a></li>
+		</ul>
+	</nav>
+
+    <div style="text-align: right"; font-family:verdana>
+		<a href = "{{ url_for('en_index')}}">
+			<span style="color:#FF00FF;font-family:verdana;text-align:center;font-size:15px";>come back to login page</span>
+		</a>
+	</div>
+
+<div id="newart" style="display: block">
+	<div>
+		<h1 style="color:#F1E0F2;font-family:verdana;text-align:center">Welcome to Student End</h1>
+	</div>
+
+	<div id="loading">
+		<p>
+			please wait for a moment…
+		</p>
+		<img src="../../static/img/loading.gif" height="100" width="100"/>
+	</div>
+
+	<h2 style="color:#F1E0F2;font-family:Comic Sans MS;text-align:center">Direction</h2>
+	<div style="color:#F1E0F2;font-size:20px;font-family:Comic Sans MS;text-align:center" id="yourtitle"></div>
+	<script>
+		var mytitle = {{title|tojson}};
+		document.getElementById('yourtitle').innerHTML=mytitle;
+	</script>
+
+	<h2 style="color:#F1E0F2;font-family:Comic Sans MS;text-align:center">Please type your content</h2>
+
+	<div id="main">
+		<form action = "{{ request.path }}" method = "post">
+			<label for = "content" style="color:#F1E0F2;font-size:23px;font-family:Comic Sans MS">Content</label><br>
+
+			<div style="text-align:center">
+				<textarea name = "content" class="myform-control" placeholder = "Please type content ..." style="width:700px;height:400px;font-size:17px;font-family:verdana;color:black;filter:alpha(opacity=40);background-color: rgb(0, 0, 0);background-color: rgba(224, 242, 241, 0.4)"></textarea><br>
+			</div><br>
+
+			<input type = "submit" class="btn btn-info" value = "Check!" style="width:150px;height:60px;font-size:28px;font-family:verdana;color:#F1E0F2"  onclick="loading();">
+		</form>
+	</div><br/>
+</div>
+
+<div id="oldart" style="display: none;overflow-y:scroll">
+	<ul>
+		<div id="pages" style="height:100%;">
+			<div id="d2_1" style="margin-left:120px;margin-right:120px"></div>
+			<div id="d2_2" style="margin-left:120px;margin-right:120px"></div>
+		</div>
+	</ul>
+</div>
+
+</body>
+
+</html>

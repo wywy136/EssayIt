@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>parallel</title>
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/jquery.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<script src="../static/Highcharts/code/highcharts.js"></script>
+
+	<style>
+	.main{width:1200px;margin:20px auto 20px}
+	.cont{padding-bottom:60px;margin-bottom:20px;background:#fff;box-shadow:0 3px 5px 0 rgba(0,0,0,.08);height:850px}
+	.arttitle{color:#fff;box-sizing:border-box;border-top:4px solid #54E8FA;height:80px;background:#33CCFF}
+
+	.title{margin-top:16px;margin-left:28px;font-size:32px}
+
+	.tablebox{margin-top:12px;margin-left:12px;margin-right:12px;font-size:24px}
+	.lefthand{float:left;margin-left:12px;margin-right:10px;width:572px;box-sizing:border-box;background:#fff;position:relative;overflow-y:auto;max-height:500px;font-size:18px;color:black}
+
+	.form-control{display:block;float:right;margin-left:12px;margin-right:10px;width:572px;max-height:500px;padding:6px 12px;font-size:18px;line-height:1.42857143;color:black;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+
+	.spellwrong{cursor: pointer;display:inline;border-bottom:1.5px solid #F00;border-top:1.5px solid #F00;border-left:1.5px solid #F00;border-right:1.5px solid #F00}
+
+	.grammarwrong{cursor: pointer;display:inline;background:#EEA8F2}
+
+	.vocabulary0{cursor: pointer;display:inline;background:#ECECEC}
+
+	.vocabulary1{cursor: pointer;display:inline;background:#F1E5F2}
+
+	.normalword{display:inline}
+	</style>
+</head>
+
+<body>
+<button onclick="test1()">test</button>
+<div class="main">
+	<div class="cont" id="1" contenteditable="true">
+		123
+	</div>
+</div>
+
+<script>
+	var test = {{test|tojson}};
+	function test1(){
+	document.getElementById("1").innerHTML=test;}
+</script>
+
+</body>

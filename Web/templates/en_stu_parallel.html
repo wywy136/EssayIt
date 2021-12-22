@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>parallel</title>
+	<link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <script src="../../static/js/jquery.min.js"></script>
+	<script src="../../static/js/bootstrap.min.js"></script>
+	<script src="../../static/Highcharts/code/highcharts.js"></script>
+
+	<style>
+	.main{width:1200px;margin:20px auto 20px}
+
+	.cont{padding-bottom:60px;margin-bottom:20px;background:#fff;box-shadow:0 3px 5px 0 rgba(0,0,0,.08);height:850px}
+
+	.arttitle{color:#fff;box-sizing:border-box;border-top:4px solid #54E8FA;height:80px;background:#33CCFF}
+
+	.title{margin-top:16px;margin-left:28px;font-size:32px}
+
+	.tablebox{margin-top:12px;margin-left:12px;margin-right:12px;font-size:24px}
+	.lefthand{float:left;margin-left:12px;margin-right:10px;width:572px;box-sizing:border-box;background:#fff;position:relative;overflow-y:auto;max-height:500px;font-size:18px;color:black}
+
+	.righthand{float:right;width:570px;margin-right:30px}
+
+	.spellwrong{cursor: pointer;display:inline;background:#FF6D46}
+
+	.grammarwrong{cursor: pointer;display:inline;background:#EEA8F2}
+
+	.vocabulary0{cursor: pointer;display:inline;background:#8DF26A}
+
+	.vocabulary1{cursor: pointer;display:inline;background:#EDACF2}
+
+	.normalword{display:inline}
+	</style>
+</head>
+
+<body>
+<div class="main">
+	<div class="cont">
+		<div class="arttitle">
+			<div class="title">Evaluation</div>
+		</div>
+
+		<div>
+			<div class="tablebox">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="text-center">Spell</th>
+							<th class="text-center">Grammar</th>
+							<th class="text-center">Vocabulary</th>
+							<th class="text-center">Sentence Pattern</th>
+							<th class="text-center">Topic</th>
+							<th class="text-center">Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-center" id="Spellscore"></td>
+							<td class="text-center" id="Grammarscore"></td>
+							<td class="text-center" id="Vocabularyscore"></td>
+							<td class="text-center" id="SentencePatternscore"></td>
+							<td class="text-center" id="Themescore"></td>
+							<td class="text-center" id="Totalscore"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br>
+		</div>
+
+		<div style="margin-left:12px">
+			<ul class="nav nav-tabs" style="font-size:34px" id="tab">
+				<li class="active"><a onclick="toSpell()">Spell</a></li>
+				<li><a onclick="toGrammar()">Grammar</a></li>
+				<li><a onclick="toVocabulary()">Vocabulary</a></li>
+			</ul>
+		</div>
+
+		<div id="lefthand" class="lefthand">
+			<div id="tab_content" class="tab-content" contenteditable="true">
+				<div id="left" class="tab-pane fade in active"></div>
+			</div>
+
+			<div id="formalwarning" style="float:left;margin-left:125px;color:red"></div>
+
+		</div>
+
+		<!-- <div style="position:fixed;left:0px;top:500px;"><button class="btn btn-primary">check<br>again</button></div> -->
+
+		<div>
+		<div style="float:right;width:570px;margin-right:30px">
+			<ul id="tab" style="font-size:24px" class="nav nav-tabs">
+				<li class="active"><a href="#rightVocabulary">Vocabulary</a></li>
+				<li><a href="#rightPhrase">Phrase</a></li>
+				<li><a href="#rightSentencePattern">Sentence</a></li>
+				<li><a href="#rightTheme">Theme</a></li>
+				<li><a href="#rightPie">Pie</a></li>
+			</ul>
+
+			<div id="tab_content" style="font-size:18px" class="tab-content">
+				<div class="tab-pane fade in active" id="rightVocabulary">
+				</div>
+				<div class="tab-pane fade" id="rightSentencePattern"></div>
+				<div class="tab-pane fade" id="rightTheme">
+					<div style="position:absolute;right:480px;">student</div>
+					<div style="position:absolute;right:190px;">standard</div><br>
+
+					<div id="wordcloud"></div>
+
+					<div id="Theme_eva"></div>
+				</div>
+				<div class="tab-pane fade" id="rightPhrase" style="overflow-y:auto;max-height:440px"></div>
+				<div class="tab-pane fade" id="rightPie">
+					<div id="pie" style="float:right;width:540px;height:300px;margin-top:30px;margin-right:30px">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<script>
+var num = {{word_id|tojson}};//总词数
+
+var spell_s = {{Spell_sum|tojson}};
+
+var grammar_s = {{Grammar_sum|tojson}};
+
+var vocabulary_s = {{Vocabulary_sum|tojson}};
+
+//分数显示
+var scores={{scores|tojson}};
+document.getElementById("Spellscore").innerHTML=scores[0];
+document.getElementById("Grammarscore").innerHTML=scores[1];
+document.getElementById("Vocabularyscore").innerHTML=scores[2];
+document.getElementById("SentencePatternscore").innerHTML=scores[3];
+document.getElementById("Themescore").innerHTML=scores[4];
+document.getElementById("Totalscore").innerHTML=scores[5];
+
+var eva={{eva|tojson}};
+//评价显示
+document.getElementById("rightVocabulary").innerHTML=eva[0];
+document.getElementById("rightSentencePattern").innerHTML=eva[1];
+document.getElementById("Theme_eva").innerHTML=eva[2];
+
+//短语知识
+var phrase_found={{phrase_found|tojson}};
+document.getElementById("rightPhrase").innerHTML=phrase_found;
+
+//饼图数据
+var pie={{pie|tojson}};
+
+//规范警告
+var warning={{warning|tojson}};
+var formalwarning=["⚠There are redundant blanks in your essay, please pay attention","⚠There are full-width characters in your essay, please pay attention", "⚠There are nonstandard characters in your essay, please pay attention"];
+var wxt = "";
+for(k = 0; k < warning.length; k++)
+{
+	if(warning[k])
+		wxt=wxt+formalwarning[k]+"<br>";
+}
+document.getElementById("formalwarning").innerHTML=wxt;
+
+//base64词云转码
+var stu_cloud={{stu_cloud|tojson}};
+var fw_cloud={{fw_cloud|tojson}};
+var wordcloud =document.getElementById('wordcloud');
+var node=wordcloud.nextSibling;
+
+stu = document.createElement('div');
+stu.innerHTML = stu_cloud;
+wordcloud.parentNode.insertBefore(stu, node)
+node=stu.nextSibling;
+
+fw = document.createElement('div');
+fw.innerHTML = fw_cloud;
+wordcloud.parentNode.insertBefore(fw, node)
+node=fw.nextSibling;
+
+//显示转换
+function toSpell()
+{
+	var read=new Array();//当前单词
+	var id=new Array();
+	for(k = 0; k < num; k++)//获取当前单词
+	{
+		id[k]="w"+k.toString();
+		if(document.getElementById(id[k]))
+			read[k]=document.getElementById(id[k]).innerHTML;
+		else
+			read[k]='';
+	}
+
+	$(types[0]).popover("hide");
+	$(types[1]).popover("hide");
+	$(types[2]).popover("hide");
+	$(types[3]).popover("hide");
+
+	document.getElementById("left").innerHTML=spell_s;
+
+	for(k = 0; k < num; k++)//换成最新单词
+	{
+		if(document.getElementById(id[k]))
+			document.getElementById(id[k]).innerHTML=read[k];
+	}
+	initPopover();
+}
+
+function toGrammar()
+{
+	var read=new Array();//当前单词
+	var id=new Array();
+	for(k = 0; k < num; k++)//获取当前单词
+	{
+		id[k]="w"+k.toString();
+		if(document.getElementById(id[k]))
+			read[k]=document.getElementById(id[k]).innerHTML;
+		else
+			read[k]='';
+	}
+
+	$(types[0]).popover("hide");
+	$(types[1]).popover("hide");
+	$(types[2]).popover("hide");
+	$(types[3]).popover("hide");
+
+	document.getElementById("left").innerHTML=grammar_s;
+
+	for(k = 0; k < num; k++)//换成最新单词
+	{
+		if(document.getElementById(id[k]))
+			document.getElementById(id[k]).innerHTML=read[k];
+	}
+	initPopover();
+}
+
+function toVocabulary()
+{
+	var read=new Array();//当前单词
+	var id=new Array();
+	for(k = 0; k < num; k++)//获取当前单词
+	{
+		id[k]="w"+k.toString();
+		if(document.getElementById(id[k]))
+			read[k]=document.getElementById(id[k]).innerHTML;
+		else
+			read[k]='';
+	}
+
+	$(types[0]).popover("hide");
+	$(types[1]).popover("hide");
+	$(types[2]).popover("hide");
+	$(types[3]).popover("hide");
+
+	document.getElementById("left").innerHTML=vocabulary_s;
+
+	for(k = 0; k < num; k++)//换成最新单词
+	{
+		if(document.getElementById(id[k]))
+			document.getElementById(id[k]).innerHTML=read[k];
+	}
+	initPopover();
+}
+
+var types=[".spellwrong",".grammarwrong",".vocabulary0",".vocabulary1"];
+//绑定气泡
+function initPopover()
+{
+	for(k = 0; k < 4; k++)
+	{
+		$(types[k]).popover({
+			container: "body",
+			trigger: " manual"    //手动触发
+		}).on("show.bs.popover", function () {
+			$(this).addClass("popover_open");
+		}).on("hide.bs.popover", function () {
+			$(this).removeClass("popover_open");
+		});
+
+		$(types[k]).click(function () {
+			if ($(this).hasClass("popover_open")) {
+				$(this).popover("hide")
+			} else {
+				$(".popover_open").popover("hide");
+				$(this).popover("show");
+			}
+			var e = arguments.callee.caller.arguments[0] || event;
+			e.stopPropagation();
+		});
+	}
+	$(document).click(function () {
+		$(types[0]).popover("hide");
+		$(types[1]).popover("hide");
+		$(types[2]).popover("hide");
+		$(types[3]).popover("hide");
+		for(x = 0; x < $(".popover").length; x++)
+			$("#"+$(".popover")[x].id).remove();
+	});
+}
+
+//选项卡切换
+$(function(){
+	$('#tab a').click(function(){
+		$(this).tab('show')
+	})
+});
+
+//饼图显示
+$(document).ready(function() {
+   var chart = {
+       plotBackgroundColor: null,
+       plotBorderWidth: null,
+       plotShadow: false
+   };
+   var title = {
+      text: "Statistic"
+   };
+   var tooltip = {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+   };
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         cursor: "pointer",
+         dataLabels: {
+            enabled: true,
+            format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+            style: {
+               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
+            }
+         }
+      }
+   };
+   var series= [{
+      type: "pie",
+      name: "Percentage",
+      data: pie}];
+
+   var json = {};
+   json.chart = chart;
+   json.title = title;
+   json.tooltip = tooltip;
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $("#pie").highcharts(json);
+});
+
+document.getElementById("left").innerHTML=spell_s;//初始化
+initPopover();
+</script>
+
+</body>
